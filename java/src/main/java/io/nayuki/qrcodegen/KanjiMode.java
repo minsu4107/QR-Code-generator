@@ -21,5 +21,5 @@ public class KanjiMode extends QrMode {
 	public QrSegment making(String str) {
 		return QrSegmentAdvanced.makeKanji(str);
 	}
-	
+  
 }
