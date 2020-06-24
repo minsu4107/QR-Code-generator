@@ -23,7 +23,7 @@
 
 package io.nayuki.qrcodegen;
 
-import java.io.File;
+import java.io.File; 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -162,11 +162,11 @@ public final class QrSegmentAdvanced {
 				curCosts[0] = charModes[i][0].getcost(prevCosts[0], codePoint);
 			}
 			// Extend a segment if possible
-			if (QrSegment.ALPHANUMERIC_CHARSET.indexOf(codePoint) != -1) {  // Is alphanumeric
+			if (is_alphanumeric(codePoint)) {  // Is alphanumeric
 				charModes[i][1] = new AlphanumericMode();
 				curCosts[1] = charModes[i][1].getcost(prevCosts[1], codePoint);  // 5.5 bits per alphanumeric char
 			}
-			if ('0' <= codePoint && codePoint <= '9') {  // Is numeric
+			if (is_numeric(codePoint)) {  // Is numeric
 				charModes[i][2] = new NumericMode();
 				curCosts[2] = charModes[i][2].getcost(prevCosts[2], codePoint);  // 3.33 bits per digit
 			}
@@ -196,7 +196,7 @@ public final class QrSegmentAdvanced {
 			QrMode[] result) {
 		for (int i = result.length - 1; i >= 0; i--) {
 			for (int j = 0; j < numModes; j++) {
-				if (modeTypes[j] == curMode) {
+				if (modeTypes[j].whichMode() == curMode.whichMode()) {
 					curMode = charModes[i][j];
 					result[i] = curMode;
 					break;

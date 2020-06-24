@@ -7,6 +7,7 @@ public class EciMode extends QrMode {
 	}
 	
 	protected EciMode() {
+		numBitsCharCount = new int[3];
 		modeBits = 0x7;
 		numBitsCharCount[0] = 0;
 		numBitsCharCount[1] = 0;

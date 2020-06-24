@@ -41,7 +41,7 @@ public class testQrSegmentAdvanced {
 		assertEquals(QrSegmentAdvanced.is_valid_version(min_version, 1),true);
 		assertEquals(QrSegmentAdvanced.is_valid_version(min_version, 10),true);
 		assertEquals(QrSegmentAdvanced.is_valid_version(min_version, 27),true);
-		assertNotEquals(QrSegmentAdvanced.is_valid_version(min_version, 0),true);
+		assertNotEquals(QrSegmentAdvanced.is_valid_version(5, 0),true);
 	}
 
 	/**
@@ -114,4 +114,6 @@ public class testQrSegmentAdvanced {
 		String not_UTF = "A�";
 		testing.makeSegmentsOptimally(not_UTF, Ecc.LOW, 1, 40);
 	}
+	
+
 }

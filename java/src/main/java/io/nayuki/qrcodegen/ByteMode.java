@@ -9,6 +9,7 @@ public class ByteMode extends QrMode {
 	}
 	
 	protected ByteMode() {
+		numBitsCharCount = new int[3];
 		modeBits = 0x4;
 		numBitsCharCount[0] = 8;
 		numBitsCharCount[1] = 16;

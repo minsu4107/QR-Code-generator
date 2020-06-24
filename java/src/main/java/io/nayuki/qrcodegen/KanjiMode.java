@@ -7,6 +7,7 @@ public class KanjiMode extends QrMode {
 	}
 	
 	protected KanjiMode() {
+		numBitsCharCount = new int[3];
 		modeBits = 0x8;
 		numBitsCharCount[0] = 8;
 		numBitsCharCount[1] = 10;

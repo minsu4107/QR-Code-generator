@@ -9,6 +9,7 @@ public class AlphanumericMode extends QrMode {
 	}
 	
 	protected AlphanumericMode() {
+		numBitsCharCount = new int[3];
 		modeBits = 0x2;
 		numBitsCharCount[0] = 9;
 		numBitsCharCount[1] = 11;

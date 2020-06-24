@@ -23,7 +23,7 @@
 
 package io.nayuki.qrcodegen;
 
-import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage; 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -190,7 +190,7 @@ public final class QrCode {
 		BitBuffer bitBuffer = new BitBuffer();
 		for (QrSegment segment : segments) {
 			bitBuffer.appendBits(segment.mode.modeBits, 4);
-			bitBuffer.appendBits(segment.numChars, segment.mode.numCharCountBits(version));
+			bitBuffer.appendBits(segment.numberOfCharacters, segment.mode.numCharCountBits(version));
 			bitBuffer.appendData(segment.data);
 		}
 		return bitBuffer;

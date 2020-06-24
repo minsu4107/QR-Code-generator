@@ -7,6 +7,7 @@ public class NumericMode extends QrMode {
 	}
 	
 	protected NumericMode() {
+		numBitsCharCount = new int[3];
 		modeBits = 0x1;
 		numBitsCharCount[0] = 10;
 		numBitsCharCount[1] = 12;
