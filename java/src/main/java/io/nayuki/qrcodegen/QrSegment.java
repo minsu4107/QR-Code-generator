@@ -29,6 +29,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import QrSegment.Mode;
+
+
+
 /**
  * A segment of character/binary/control data in a QR Code symbol.
  * Instances of this class are immutable.
