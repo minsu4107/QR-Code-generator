@@ -162,11 +162,11 @@ public final class QrSegmentAdvanced {
 				curCosts[0] = charModes[i][0].getcost(prevCosts[0], codePoint);
 			}
 			// Extend a segment if possible
-			if (QrSegment.ALPHANUMERIC_CHARSET.indexOf(codePoint) != -1) {  // Is alphanumeric
+			if (is_alphanumeric(codePoint)) {  // Is alphanumeric
 				charModes[i][1] = new AlphanumericMode();
 				curCosts[1] = charModes[i][1].getcost(prevCosts[1], codePoint);  // 5.5 bits per alphanumeric char
 			}
-			if ('0' <= codePoint && codePoint <= '9') {  // Is numeric
+			if (is_numeric(codePoint)) {  // Is numeric
 				charModes[i][2] = new NumericMode();
 				curCosts[2] = charModes[i][2].getcost(prevCosts[2], codePoint);  // 3.33 bits per digit
 			}
